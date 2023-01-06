@@ -10,11 +10,6 @@ class Tareas {
     constructor(){
 
         this.leerDatos();
-        //const data = leerDB( nombre );
-
-        //( data )
-        //    ? this._listado = data
-        //    : this._listado = {}
 
     }
 
@@ -22,6 +17,9 @@ class Tareas {
 
         if ( this._listado[id] ) {
             delete this._listado[id];
+            guardarDB(nombre,this._listado);
+
+            this.leerDatos();
         }
     }
 
